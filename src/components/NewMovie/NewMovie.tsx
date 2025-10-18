@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { TextField } from '../TextField';
 import { Movie } from '../../types/Movie';
 
@@ -75,7 +75,7 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
         value={movie.imgUrl}
         onChange={value => handleChange('imgUrl', value)}
         required
-        validator={(value: string) => pattern.test(value.trim())}
+        validator={value => pattern.test(value.trim())}
       />
 
       <TextField
@@ -84,7 +84,7 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
         value={movie.imdbUrl}
         onChange={value => handleChange('imdbUrl', value)}
         required
-        validator={(value: string) => pattern.test(value.trim())}
+        validator={value => pattern.test(value.trim())}
       />
 
       <TextField
